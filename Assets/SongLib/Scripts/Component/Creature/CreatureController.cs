@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace SongLib
 {
-    public abstract class CreatureController
+    public abstract class CreatureController : MonoBehaviour
     {
         private bool IsInitialized { get; set; }
 

@@ -1,0 +1,42 @@
+using UnityEngine;
+using SongLib;
+using System;
+
+public class PlayerMovement : CreatureMovement<PlayerController>
+{
+    #region << =========== FIELD =========== >>
+    private bool _onMoveLeft;
+    private bool _onMoveRight;
+
+    #endregion
+
+    public override void Init()
+    {
+        Delegate moveLeft = new Action<bool>(MoveLeft);
+        Delegate moveRight = new Action<bool>(MoveRight);
+
+        Global.Event.Register((int)EEventType.MoveLeft, moveLeft);
+        Global.Event.Register((int)EEventType.MoveRight, moveRight);
+    }
+
+    public override void MoveTo(Vector3 position)
+    {
+        base.MoveTo(position);
+    }
+
+    private void Tick(float deltaTime)
+    {
+        
+    }
+
+
+    private void MoveLeft(bool isMove)
+    {
+        _onMoveLeft = isMove;
+    }
+
+    private void MoveRight(bool isMove)
+    {
+        _onMoveRight = isMove;
+    }
+}

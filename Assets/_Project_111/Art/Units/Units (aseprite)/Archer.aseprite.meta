@@ -123,7 +123,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Archer_Frame_0
     originalName: 
-    pivot: {x: 0.5428571, y: -0.6363636}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -143,7 +143,7 @@ ScriptedImporter:
     uvTransform: {x: 164, y: 96}
   - name: Archer_Frame_1
     originalName: 
-    pivot: {x: 0.5492958, y: -0.6363636}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -163,7 +163,7 @@ ScriptedImporter:
     uvTransform: {x: 85, y: 96}
   - name: Archer_Frame_2
     originalName: 
-    pivot: {x: 0.5555556, y: -0.6363636}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -183,7 +183,7 @@ ScriptedImporter:
     uvTransform: {x: 244, y: 193}
   - name: Archer_Frame_3
     originalName: 
-    pivot: {x: 0.5492958, y: -0.62921345}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -203,7 +203,7 @@ ScriptedImporter:
     uvTransform: {x: 324, y: 193}
   - name: Archer_Frame_4
     originalName: 
-    pivot: {x: 0.5428571, y: -0.6363636}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -223,7 +223,7 @@ ScriptedImporter:
     uvTransform: {x: 242, y: 96}
   - name: Archer_Frame_5
     originalName: 
-    pivot: {x: 0.5428571, y: -0.6511628}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -243,7 +243,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 291}
   - name: Archer_Frame_6
     originalName: 
-    pivot: {x: 0.55714285, y: -0.65882355}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -263,7 +263,7 @@ ScriptedImporter:
     uvTransform: {x: 82, y: 291}
   - name: Archer_Frame_7
     originalName: 
-    pivot: {x: 0.53424656, y: -0.62921345}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -283,7 +283,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 96}
   - name: Archer_Frame_8
     originalName: 
-    pivot: {x: 0.5211268, y: -0.62222224}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -303,7 +303,7 @@ ScriptedImporter:
     uvTransform: {x: 84, y: 193}
   - name: Archer_Frame_9
     originalName: 
-    pivot: {x: 0.53623194, y: -0.62921345}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -323,7 +323,7 @@ ScriptedImporter:
     uvTransform: {x: 320, y: 96}
   - name: Archer_Frame_10
     originalName: 
-    pivot: {x: 0.5555556, y: -0.62222224}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -343,7 +343,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 193}
   - name: Archer_Frame_11
     originalName: 
-    pivot: {x: 0.5890411, y: -0.6436781}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -363,7 +363,7 @@ ScriptedImporter:
     uvTransform: {x: 163, y: 193}
   - name: Archer_Frame_12
     originalName: 
-    pivot: {x: 0.61764705, y: -0.6511628}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -383,7 +383,7 @@ ScriptedImporter:
     uvTransform: {x: 160, y: 291}
   - name: Archer_Frame_13
     originalName: 
-    pivot: {x: 0.5454545, y: -0.7088607}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -403,7 +403,7 @@ ScriptedImporter:
     uvTransform: {x: 397, y: 96}
   - name: Archer_Frame_14
     originalName: 
-    pivot: {x: 0.5443038, y: -0.6829268}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -423,7 +423,7 @@ ScriptedImporter:
     uvTransform: {x: 99, y: 4}
   - name: Archer_Frame_15
     originalName: 
-    pivot: {x: 0.4942529, y: -0.6666667}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -443,7 +443,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Archer_Frame_16
     originalName: 
-    pivot: {x: 0.53846157, y: -0.6829268}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -463,7 +463,7 @@ ScriptedImporter:
     uvTransform: {x: 186, y: 4}
   - name: Archer_Frame_17
     originalName: 
-    pivot: {x: 0.5616438, y: -0.6511628}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -483,7 +483,7 @@ ScriptedImporter:
     uvTransform: {x: 403, y: 193}
   - name: Archer_Frame_18
     originalName: 
-    pivot: {x: 0.511628, y: -7.5}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
