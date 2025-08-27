@@ -67,7 +67,6 @@ if (isValid) return true;
 
 3.1 TODO 형식
 TODO:(작성자):(주제) - 내용
-예: // TODO:minb:refactor - 성능 최적화를 위한 리팩토링 필요
 
 3.2 MEMO 형식
 예: // MEMO: 호출 순서를 꼭 지켜줘야 함

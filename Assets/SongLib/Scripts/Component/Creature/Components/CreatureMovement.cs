@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SongLib
 {
-    public class CreatureMovement<T> : MonoBehaviour, ISlowable where T : CreatureController
+    public class CreatureMovement<T> : MonoBehaviour where T : CreatureController
     {
         #region << =========== FLAG =========== >>
 

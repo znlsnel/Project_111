@@ -40,8 +40,7 @@ namespace SongLib
         private bool IsNotEqualCloseEaseUnset => _closeEaseType != Ease.Unset && IsNotEqualCustomDOTween;
         private bool IsNotEqualEaseUnset => IsNotEqualOpenEaseUnset || IsNotEqualCloseEaseUnset && IsNotEqualCustomDOTween;
         
-        // ===============================================
-        // TODO:minb - 아직 로직은 안넣음
+
         [BoxGroup("Delay")] [SerializeField] private bool _isOpenDelay = false;
         [BoxGroup("Delay")] [ShowIf(nameof(_isOpenDelay))] [SerializeField] private float _openDelayTime = 0.0f;
         

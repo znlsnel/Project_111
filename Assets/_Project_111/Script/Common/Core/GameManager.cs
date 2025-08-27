@@ -16,6 +16,7 @@ public class GameManager : BaseGameManager
         _managers.Add(ObjectPoolManager.Instance);
         _managers.Add(PopupManager.Instance);
         _managers.Add(SceneFlowManager.Instance);
+        _managers.Add(EventManager.Instance);
     }
 
     protected override void InitializeManagerForce()

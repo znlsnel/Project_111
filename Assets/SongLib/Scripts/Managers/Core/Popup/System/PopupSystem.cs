@@ -114,8 +114,6 @@ namespace SongLib
         
         #region << =========== CLOSE POPUP =========== >>
         
-        // TODO:minb - close popup 관련 리팩토링 필요
-        /// <summary>팝업창을 닫기</summary>
         public void ClosePopup(int popupID)
         {
             UIPopup uiPopup = GetPopup(popupID);

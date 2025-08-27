@@ -14,4 +14,19 @@ public class ObjectManager : BaseObjectManager<ObjectManager>
     }
 
 
+    public void SpawnPlayer(Vector3 spawnPosition)
+    {
+        GameObject go = base.Spawn(StringKey.Player, true);
+        go.transform.position = spawnPosition;
+        go.GetComponent<PlayerController>().Init();
+    }
+
+    public void SpawnEnemy(Vector3 spawnPosition)
+    {
+        GameObject go = base.Spawn(StringKey.Enemy, true);
+        go.transform.position = spawnPosition;
+        go.GetComponent<EnemyController>().Init();
+    }
+
+
 }

@@ -14,9 +14,7 @@ public class ResourceManager : BaseResourceManager<ResourceManager>
     {
         base.NewGameResource();
 
-        resourcePrefab = new GameResource<GameObject>("Prefab, Prefab/UIElement");
-        resourceMaterial = new GameResource<Material>("Material");
-        resourceSO = new GameResource<ScriptableObject>("Data, Level");
+        resourcePrefab = new GameResource<GameObject>("Prefab");
         resourceUIPopup = new GameResourceUIPopup("Popup");
     }
 

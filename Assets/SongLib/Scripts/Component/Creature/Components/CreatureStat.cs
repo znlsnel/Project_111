@@ -35,10 +35,6 @@ namespace SongLib
                 currentHealth = Mathf.Clamp(value, 0f, MaxHP);
 
                 float fillAmount = currentHealth / MaxHP;
-                if (owner.HealthBarImg != null)
-                {
-                    owner.HealthBarImg.fillAmount = fillAmount;
-                }
 
                 OnHealthChanged(fillAmount);
 

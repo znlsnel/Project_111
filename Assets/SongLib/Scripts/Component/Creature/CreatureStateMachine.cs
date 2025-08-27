@@ -64,8 +64,6 @@ namespace SongLib
                 CurrentState = newState;
                 CurrentStateType = newStateType;
 
-                owner.OnStateChanged?.Invoke(CurrentStateType);
-
                 newState.Enter(param);
             }
             else
