@@ -1,0 +1,273 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb9c12a8c6c949f7af83a3d238359d0, type: 3}
+  m_Name: vFolders Data
+  m_EditorClassIdentifier: 
+  folderDatas_byGuid:
+    keys:
+    - 5f5d8d5e79026e241a895c1ae7fa8ea6
+    - cc4991f9d7f551f4792ef7825326c21a
+    - 36dd7fdb2c7a9ab4c825868622347862
+    - ace45db36d19645d6887e0f1ed847579
+    - f464a8391d3291d43a186896e41a6594
+    - 50ec0e6c3e5b7ab4aabc3d6c16731e80
+    - 709f11a7f3c4041caa4ef136ea32d874
+    - 2775a35d5439bb443a1099feb0999ed1
+    - 12f9fdd87e6efea4fb966756dae663ec
+    - a6b19beae77b5224e9de50c3c889ebd6
+    - 80e77556563a5f04987670f13882437f
+    - 54b7048f02c0f494ea35037f7b81ff5e
+    - 4b7a22c61f4b97f46ae6dd5d9b01d82a
+    - 59e73fbcbe068de4d8b86e9e7a668665
+    - 62ddefd95a62cbc4ea1a2aabc009a378
+    - 0d05ff951ae10d64fbb159ce540b14da
+    - 2a624b006a2ea27469f4a997a3261034
+    - 3170fcfbf71b75b47a0cc1fc3e67abbd
+    - 2e4ae62843887ee448c7a62c0fc88c27
+    - 4674c16d07552904587761a8c2cd1376
+    - e1262c030181b314891c6d912b00ab99
+    - 50a6b37d6501cec4a86169b78b862ce2
+    - 855f1df440936f642b744836fd4b011e
+    - b416d645a32ae4c49812702ecb10a796
+    - 2e7d0ac7836fc2c4a98e7510c071b35e
+    - 3dc4182bc0a169e4db7bbe6bf8821830
+    - 2563f2af42e01b14d9763c092883cc7f
+    - 2cb1d6678f2ef364990679db4b8af547
+    - b173928dfb1174745a687bb50846961d
+    - 24ed0af4eedbd9143b71debc51b95145
+    - c057be2bfb7acd040819bfcc08ab038a
+    - 64448275104066f49b38794357070662
+    - 5091e8c2472c3c04f8ff1550441b3172
+    - 66d8319552157a34d8b872361fcd6237
+    - 40bdfe00a971e8a4ba39a6b89c16d590
+    - 9f329c2832a09b240a42e095552a95df
+    - 55fcfc05c3f0bf94cbcba1b0b96a8dc8
+    - 738771c5b646a7d4ebac18fe16e3eb53
+    - 81c2ab2207176ee49b289e7c5b3e559a
+    - f84c882c5b2dec448b31b73412052da7
+    - dc8c9202f43152b4d9946f74500e7c5b
+    - e0978a943f9e4ea458301cf168515dfc
+    - c494a2ebcd552ec45ae8161ab7758263
+    - b57077b20841a9a4aa37ad9ba17a7da6
+    - 766a51fb702d8a54eb4dac6f2323ea1d
+    - 09d72701d70304248bedae5b556630cf
+    - 391f0a8390f743e49a21ba9468355a4f
+    - cd15554a66bee4e4db651156f0d5ccfd
+    - 8f30afdfd2dfeb544be6b95c731925e0
+    - dd643c154c11f4f0384f8f0815a9eddf
+    - 3ed35a3a6a6ae4e69a52e641412bc2c9
+    values:
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: 
+      colorIndex: 1
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: none
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: 
+      colorIndex: 1
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: 
+      colorIndex: 1
+      isIconRecursive: 0
+      isColorRecursive: 0
+  bookmarks: []
