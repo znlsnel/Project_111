@@ -10,6 +10,13 @@ public class PlayerMovement : CreatureMovement<PlayerController>
 
     #endregion
 
+    #region << =========== PROPERTIES =========== >>
+    public float MoveSpeed => owner.PlayerData.MoveSpeed;
+    public bool IsMoving => _onMoveLeft != _onMoveRight;
+    #endregion
+
+
+
     public override void Init()
     {
         Delegate moveLeft = new Action<bool>(MoveLeft);
@@ -21,14 +28,25 @@ public class PlayerMovement : CreatureMovement<PlayerController>
 
     public override void MoveTo(Vector3 position)
     {
-        base.MoveTo(position);
+        owner.transform.position = position;
     }
 
-    private void Tick(float deltaTime)
+
+    private void Update()
     {
-        
+        UpdateMove();
     }
 
+    private void UpdateMove()
+    {
+        if (_onMoveLeft && _onMoveRight)
+            return;
+
+        if (_onMoveLeft)
+            MoveTo(owner.transform.position + Vector3.left * MoveSpeed * Time.deltaTime);
+        else if (_onMoveRight)
+            MoveTo(owner.transform.position + Vector3.right * MoveSpeed * Time.deltaTime);
+    }
 
     private void MoveLeft(bool isMove)
     {

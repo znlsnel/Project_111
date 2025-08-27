@@ -11,6 +11,9 @@ namespace SongLib
 
         Info,
         Event,
+        State,
+
+        Combat,
     }   
     
 }

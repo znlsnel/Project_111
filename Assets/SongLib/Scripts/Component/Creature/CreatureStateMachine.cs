@@ -6,9 +6,9 @@ namespace SongLib
 {
     public abstract class CreatureStateMachine<T> : MonoBehaviour, IStateMachine where T : CreatureController
     {
-        protected Dictionary<CreatureStateType, IState> states;
+        protected Dictionary<ECreatureStateType, IState> states;
         public IState CurrentState { get; private set; }
-        [field: SerializeField, ReadOnly] public CreatureStateType CurrentStateType { get; private set; }
+        [field: SerializeField, ReadOnly] public ECreatureStateType CurrentStateType { get; private set; }
 
         public bool IsInitialized { get; private set; }
         protected T owner;
@@ -20,7 +20,7 @@ namespace SongLib
             owner = creatureOwner as T;
         }
 
-        public virtual void Init(CreatureStateType stateType, object param = null)
+        public virtual void Init(ECreatureStateType stateType, object param = null)
         {
             CreateStates();
             InitStates();
@@ -53,10 +53,10 @@ namespace SongLib
 
         #region << =========== CHANGE STATE =========== >>
 
-        public void ChangeState(CreatureStateType newStateType, object param = null)
+        public void ChangeState(ECreatureStateType newStateType, object param = null)
         {
             if (CurrentStateType == newStateType) return;
-            if (CurrentStateType == CreatureStateType.Dead) return;
+            if (CurrentStateType == ECreatureStateType.Dead) return;
 
             if (states.TryGetValue(newStateType, out IState newState))
             {

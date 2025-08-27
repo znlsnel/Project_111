@@ -2,7 +2,7 @@ namespace SongLib
 {
     public interface IStateMachine
     {
-        void ChangeState(CreatureStateType newStateType, object param = null);
-        CreatureStateType CurrentStateType { get; }
+        void ChangeState(ECreatureStateType newStateType, object param = null);
+        ECreatureStateType CurrentStateType { get; }
     }
 }

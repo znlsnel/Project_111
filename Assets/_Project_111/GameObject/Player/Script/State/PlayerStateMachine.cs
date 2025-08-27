@@ -7,10 +7,12 @@ public class PlayerStateMachine : CreatureStateMachine<PlayerController>
 {
     protected override void CreateStates()
     {
-        states = new Dictionary<CreatureStateType, IState>
+        states = new Dictionary<ECreatureStateType, IState>
         {
-            { CreatureStateType.Idle, new PlayerIdleState() },
-            { CreatureStateType.Move, new PlayerMoveState() },
+            { ECreatureStateType.Idle, new PlayerIdleState() },
+            { ECreatureStateType.Move, new PlayerMoveState() },
+            { ECreatureStateType.Attack, new PlayerAttackState() },
+            { ECreatureStateType.Dead, new PlayerDeadState() },
         };
     }
 

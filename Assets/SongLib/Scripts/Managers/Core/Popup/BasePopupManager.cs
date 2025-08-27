@@ -5,10 +5,6 @@ using UnityEngine;
 
 namespace SongLib
 {
-    /// <summary>
-    /// 게임에서는 PopupManager를 상속 받아서 사용 바랍니다.
-    /// 게임에서 GAME_UI_ID enum 값은 100번 부터 할당해서 사용 바랍니다.
-    /// </summary>
     public abstract class BasePopupManager<U> : SingletonWithMono<U>, IBaseManager, IPopupManager where U : BasePopupManager<U>, new()
     {
         protected PopupSystem _popupSystem;

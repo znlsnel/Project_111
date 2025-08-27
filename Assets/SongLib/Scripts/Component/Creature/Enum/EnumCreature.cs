@@ -1,6 +1,6 @@
 namespace SongLib
 {
-    public enum CreatureStateType
+    public enum ECreatureStateType
     {
         Idle,
         Move,

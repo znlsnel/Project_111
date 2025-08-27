@@ -6,4 +6,5 @@ public class StringKey
 {
     public const string Player = "Player";
     public const string Enemy = "Enemy";
+    public const string Arrow = "Arrow";
 }

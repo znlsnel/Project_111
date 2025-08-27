@@ -6,10 +6,19 @@ using SongLib;
 
 public class PlayerController : CreatureController
 {
+
+    #region << =========== FIELD =========== >>
+
+    [SerializeField] private CharacterDataSO _playerData;
+
+    #endregion
+
     #region << =========== PROPERTIES =========== >>
 
     public PlayerMovement Movement { get; private set; }
     public PlayerStateMachine StateMachine { get; private set; }
+
+    public CharacterDataSO PlayerData => _playerData;
 
     #endregion
 
@@ -24,7 +33,7 @@ public class PlayerController : CreatureController
         StateMachine.Setup(this);
         Movement.Setup(this);
 
-        StateMachine.Init(CreatureStateType.Idle);
+        StateMachine.Init(ECreatureStateType.Idle);
         Movement.Init();
     }
 

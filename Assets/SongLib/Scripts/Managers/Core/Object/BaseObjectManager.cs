@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using SongLib;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -29,7 +30,17 @@ namespace SongLib
         protected abstract void Reset();
 
         public GameObject Spawn(string key, bool isPooling = true) => AddObject(key, pooling: isPooling);
-        public void Despawn(GameObject obj) => DestroyObject(obj);
+        public void Despawn(GameObject obj, float time = 0f)
+        {
+            if (time > 0f)
+            {
+                StartCoroutine(CoDestroyObject(obj, time));
+            }
+            else
+            {
+                DestroyObject(obj);
+            }
+        }
 
         #region << =========== ADD OBJECT =========== >>
 
@@ -116,6 +127,12 @@ namespace SongLib
 
             // Pool에 넣을 수 없다면 Destroy ( 오브젝트풀링이 아닌 경우 )
             Destroy(go);
+        }
+
+        private IEnumerator CoDestroyObject(GameObject obj, float time)
+        {
+            yield return new WaitForSeconds(time);
+            DestroyObject(obj);
         }
 
         #endregion

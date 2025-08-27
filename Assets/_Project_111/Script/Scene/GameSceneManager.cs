@@ -13,9 +13,12 @@ public class GameSceneManager : BaseSceneManager<GameSceneManager>
     protected override void Init()
     {
         _uiSceneGame.Init();
-        
+
         Managers.Object.SpawnPlayer(_playerSpawnPoint.position);
-        //Managers.Object.SpawnEnemy(_enemySpawnPoint.position);
+        Managers.Object.SpawnEnemy(_enemySpawnPoint.position);
+
+        Managers.Object.Player.SetTarget(Managers.Object.Enemy);
+        Managers.Object.Enemy.SetTarget(Managers.Object.Player);
     }
 
 
