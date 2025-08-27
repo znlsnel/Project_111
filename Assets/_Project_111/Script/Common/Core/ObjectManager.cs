@@ -16,7 +16,7 @@ public class ObjectManager : BaseObjectManager<ObjectManager>
     #region << =========== PLAYER =========== >>
     private PlayerController _player;
     public PlayerController Player => _player;
-    
+
     public void SpawnPlayer(Vector3 spawnPosition)
     {
         GameObject go = base.Spawn(StringKey.Player, false);
@@ -27,7 +27,6 @@ public class ObjectManager : BaseObjectManager<ObjectManager>
 
     #endregion
 
-
     #region << =========== ENEMY =========== >>
     public EnemyController _enemy;
     public EnemyController Enemy => _enemy;
@@ -37,6 +36,27 @@ public class ObjectManager : BaseObjectManager<ObjectManager>
         go.transform.position = spawnPosition;
         go.GetComponent<EnemyController>().Init();
         _enemy = go.GetComponent<EnemyController>();
+    }
+
+    #endregion
+
+    #region << =========== EFFECT =========== >>
+    public GameObject CreateEffect(string effectName, Vector3 pos, float size = 1f)
+    {
+        var effect = base.Spawn(effectName, false);
+        effect.transform.SetParent(null);
+        effect.transform.position = pos;
+        effect.transform.localScale *= size;
+        return effect;
+    }
+
+    public GameObject CreateEffect(string effectName, Transform transform, float size = 1f)
+    {
+        var effect = base.Spawn(effectName, false);
+        effect.transform.SetParent(transform);
+        effect.transform.localPosition = Vector3.zero;
+        effect.transform.localScale *= size;
+        return effect;
     }
 
     #endregion

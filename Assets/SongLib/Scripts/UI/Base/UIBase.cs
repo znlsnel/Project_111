@@ -58,7 +58,6 @@ namespace SongLib
 
         #region << =========== INIT =========== >>
 
-        // TODO:minb:check - Show&Hide 부분 최적화 고려해서 추후 수정
         public virtual void Show(float duration = .0f)
         {
             if (GetActive() && GetCanvasGroupAlpha() == 1) return;

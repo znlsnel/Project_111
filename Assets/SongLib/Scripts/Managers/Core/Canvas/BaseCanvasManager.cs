@@ -15,8 +15,6 @@ namespace SongLib
             base.Awake();
             IsInitialized = false;
         }
-
-        // TODO:minb:check - 공사중... 향후 다양한 플랫폼의 게임을 지원하기 위해 캔버스 사이즈를 조절하는 기능을 추가할 예정
         public void Init()
         {
             if (IsInitialized) return;

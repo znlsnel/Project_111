@@ -80,10 +80,6 @@ namespace SongLib
 
         #region << =========== ANIMATION =========== >>
 
-        //TODO:highcl - SetState 추상화 고민
-        //public abstract void SetState(int stateIdx);
-        //public void SetState(int stateIdx) => SetState((PlayerAnimationState)stateIdx);
-
         protected void PlayTrigger(int triggerHash)
         {
             if (animator != null)

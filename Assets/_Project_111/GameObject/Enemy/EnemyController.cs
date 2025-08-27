@@ -14,6 +14,7 @@ public class EnemyController : CreatureController
 
     #region << =========== PROPERTIES =========== >>
 
+
     public MonsterMovement Movement { get; private set; }
     public EnemyStateMachine StateMachine { get; private set; }
 
