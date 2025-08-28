@@ -78,6 +78,7 @@ public class ProjectileController : MonoBehaviour
             return;
         }
 
+        Managers.Object.CreateEffect(EEffectType.Explosion, target.transform.position, 1f);
         target.TakeDamage(_projectileData.Damage, DamageType.Normal);
         Despawn();
     }

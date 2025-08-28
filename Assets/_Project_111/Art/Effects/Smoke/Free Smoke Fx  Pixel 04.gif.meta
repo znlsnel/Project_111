@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cdd0eb5748b844dd883d288d70e13653
+guid: 0b3eb446cf4a74bfca4d56a1ded5327f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,7 +136,112 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Explosions_0
+      name: Free Smoke Fx  Pixel 04_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b70f29cf0d6d4716b5e6f475e1e1093
+      internalID: -2128036900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 04_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71cbc364426904408936cc2a807e1b8f
+      internalID: 395468055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 04_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced123da5d0ab49d58cf5aa4d825395f
+      internalID: 786876253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 04_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a562af0d96d3488c9533ad7537a83e2
+      internalID: 2115716041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 04_4
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02bb098a8bbf4fdb9a910275ca2cbbb
+      internalID: 1434715012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free Smoke Fx  Pixel 04_5
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c699e0795aed3435e895b60cb1cd0f9d
-      internalID: -1430461420
+      spriteID: c7c50c579a8504b9dbca572647f77e73
+      internalID: -91398248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosions_1
+      name: Free Smoke Fx  Pixel 04_6
       rect:
         serializedVersion: 2
         x: 192
@@ -171,14 +276,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64a6d3e83d78142faabb06f4098f53b0
-      internalID: -263671449
+      spriteID: d0decb1e76c804f7ca2dcdc8308387ff
+      internalID: 720658065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosions_2
+      name: Free Smoke Fx  Pixel 04_7
       rect:
         serializedVersion: 2
         x: 384
@@ -192,14 +297,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d71980d48fa864bcaad065456c11e7c4
-      internalID: 679531165
+      spriteID: f542372b6e6cb428e8f4df4beb9f44b6
+      internalID: -217474547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosions_3
+      name: Free Smoke Fx  Pixel 04_8
       rect:
         serializedVersion: 2
         x: 576
@@ -213,14 +318,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40591c5d22b154c0196d05c242966df0
-      internalID: -10269465
+      spriteID: 336d77373bcf848a79a11d26e8bbaa50
+      internalID: -748879639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosions_4
+      name: Free Smoke Fx  Pixel 04_9
       rect:
         serializedVersion: 2
         x: 768
@@ -234,92 +339,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e00d1854673c48fdaa34e1ae0e06963
-      internalID: -1958917301
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosions_5
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66b1af733d88f47a089dcf9c4a6ddfdc
-      internalID: -417552863
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosions_6
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 0
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fba411b5010c548c99a4396900081b4b
-      internalID: 31179334
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosions_7
-      rect:
-        serializedVersion: 2
-        x: 1344
-        y: 0
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6bbfcec4f96d4158ae830288e446e9f
-      internalID: -664256318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosions_8
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 44852a02f4ece436b921422277a1c1fc
-      internalID: -754022429
+      spriteID: 61176e5f9293f41ceb328775dd77c873
+      internalID: 1923476524
       vertices: []
       indices: 
       edges: []
@@ -335,15 +356,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Explosions_0: -1430461420
-      Explosions_1: -263671449
-      Explosions_2: 679531165
-      Explosions_3: -10269465
-      Explosions_4: -1958917301
-      Explosions_5: -417552863
-      Explosions_6: 31179334
-      Explosions_7: -664256318
-      Explosions_8: -754022429
+      Free Smoke Fx  Pixel 04_0: -2128036900
+      Free Smoke Fx  Pixel 04_1: 395468055
+      Free Smoke Fx  Pixel 04_2: 786876253
+      Free Smoke Fx  Pixel 04_3: 2115716041
+      Free Smoke Fx  Pixel 04_4: 1434715012
+      Free Smoke Fx  Pixel 04_5: -91398248
+      Free Smoke Fx  Pixel 04_6: 720658065
+      Free Smoke Fx  Pixel 04_7: -217474547
+      Free Smoke Fx  Pixel 04_8: -748879639
+      Free Smoke Fx  Pixel 04_9: 1923476524
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

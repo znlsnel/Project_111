@@ -9,6 +9,8 @@ public class StringKey
     public const string Arrow = "Arrow";
     public const string Dynamite = "Arrow_Dynamite";
 
+
+
     private static Dictionary<ESceneType, string> SceneNameDict = new Dictionary<ESceneType, string>()
     {
         {ESceneType.Game, "GameScene"},
@@ -22,6 +24,13 @@ public class StringKey
         {ESkillType.AirBrake, "AirBrake"},
     };
 
+    private static Dictionary<EEffectType, string> EffectNameDict = new Dictionary<EEffectType, string>()
+    {
+        {EEffectType.Explosion, "ExplosionEffect"},
+        {EEffectType.ShieldHit, "ShieldHit"},
+    };
+
     public static string GetSceneName(ESceneType type) => SceneNameDict[type];
     public static string GetSkillName(ESkillType type) => SkillNameDict[type];
+    public static string GetEffectName(EEffectType type) => EffectNameDict[type];
 }

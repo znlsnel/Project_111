@@ -42,7 +42,22 @@ public class ObjectManager : BaseObjectManager<ObjectManager>
     #endregion
 
     #region << =========== EFFECT =========== >>
-    public GameObject CreateEffect(string effectName, Vector3 pos, float size = 1f)
+
+    public GameObject CreateEffect(EEffectType type, Vector3 pos, float size = 1f, float duration = 2f)
+    {
+        var go =  CreateEffect(StringKey.GetEffectName(type), pos, size);
+        Despawn(go, duration);
+        return go;
+    }
+
+    public GameObject CreateEffect(EEffectType type, CreatureController owner, float size = 1f, float duration = 2f)
+    {
+        var go = CreateEffect(StringKey.GetEffectName(type), owner.transform, size);
+        Despawn(go, duration);
+        return go;
+    }
+
+    private GameObject CreateEffect(string effectName, Vector3 pos, float size = 1f, float duration = 2f)
     {
         var effect = base.Spawn(effectName, false);
         effect.transform.SetParent(null);
@@ -51,7 +66,7 @@ public class ObjectManager : BaseObjectManager<ObjectManager>
         return effect;
     }
 
-    public GameObject CreateEffect(string effectName, Transform transform, float size = 1f)
+    private GameObject CreateEffect(string effectName, Transform transform, float size = 1f, float duration = 2f)
     {
         var effect = base.Spawn(effectName, false);
         effect.transform.SetParent(transform);
