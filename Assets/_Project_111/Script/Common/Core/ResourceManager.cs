@@ -14,7 +14,7 @@ public class ResourceManager : BaseResourceManager<ResourceManager>
     {
         base.NewGameResource();
 
-        resourcePrefab = new GameResource<GameObject>("Prefab,Prefab/Projectile");
+        resourcePrefab = new GameResource<GameObject>("Prefab,Prefab/Projectile,Skill");
         resourceUIPopup = new GameResourceUIPopup("Popup");
     }
 

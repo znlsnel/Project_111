@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 using SongLib;
+using System.Linq;
 
 public class ObjectManager : BaseObjectManager<ObjectManager>
 {
@@ -59,5 +60,55 @@ public class ObjectManager : BaseObjectManager<ObjectManager>
         return effect;
     }
 
+    #endregion
+
+    #region << =========== SKILL =========== >>
+    public SkillBase CreateSkill(CreatureController owner, ESkillType type)
+    {
+        GameObject go = base.Spawn(StringKey.GetSkillName(type), false);
+        go.transform.position = owner.transform.position;
+        go.GetComponent<SkillBase>().Setup(owner);
+        return go.GetComponent<SkillBase>();
+    }
+
+
+    private Dictionary<GameObject, HashSet<ProjectileController>> _projectiles = new Dictionary<GameObject, HashSet<ProjectileController>>();
+    public ProjectileController CreateArrow(CreatureController owner, Vector3 targetPosition)
+    {
+        return CreateProjectile(owner, targetPosition, StringKey.Arrow);
+    }
+
+    public ProjectileController CreateDynamite(CreatureController owner, Vector3 targetPosition)
+    {
+        return CreateProjectile(owner, targetPosition, StringKey.Dynamite);
+    }
+
+    private ProjectileController CreateProjectile(CreatureController owner, Vector3 targetPosition, string key)
+    {
+        GameObject go = base.Spawn(key, true);
+        go.transform.position = owner.transform.position;
+        ProjectileController pc = go.GetComponent<ProjectileController>();
+        pc.Setup(owner);
+        pc.Shot(targetPosition);
+
+        if (!_projectiles.TryGetValue(owner.gameObject, out HashSet<ProjectileController> projectiles))
+        {
+            projectiles = new HashSet<ProjectileController>();
+            _projectiles[owner.gameObject] = projectiles;
+        }
+        projectiles.Add(pc);
+
+        pc.OnDespawn += () => projectiles.Remove(pc);
+        return pc;
+    }
+
+    public List<ProjectileController> GetProjectiles(CreatureController owner)
+    {
+        if (!_projectiles.TryGetValue(owner.gameObject, out HashSet<ProjectileController> projectiles))
+        {
+            return new List<ProjectileController>();
+        }
+        return projectiles.ToList();
+    }
     #endregion
 }

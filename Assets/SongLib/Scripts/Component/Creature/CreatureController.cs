@@ -7,7 +7,6 @@ namespace SongLib
     public abstract class CreatureController : MonoBehaviour
     {
         private CreatureController _target;
-
         public CreatureController Target => _target;
         public bool IsInitialized { get; set; }
         public bool IsDead { get; protected set; }

@@ -5,7 +5,6 @@ namespace SongLib
     public abstract class UIScene: UIPanel
     {
 
-
         public override void Init()
         {
             base.Init();
@@ -16,7 +15,7 @@ namespace SongLib
             // }
             // else
             // {
-            //     _uiContainer.Init();
+            _uiContainer.Init();
             // }
             SetCanvasGroupAll(true);
             

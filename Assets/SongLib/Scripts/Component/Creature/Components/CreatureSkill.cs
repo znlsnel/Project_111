@@ -11,10 +11,8 @@ namespace SongLib
             owner = creatureOwner as T;
         }
 
-        public virtual void Init()
-        {
-        }
+        public abstract void Init();
 
-        protected abstract void SetTarget(IDamageable target);
+        protected abstract void SetTarget(CreatureController target);
     }
 }

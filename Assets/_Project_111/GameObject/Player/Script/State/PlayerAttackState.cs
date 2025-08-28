@@ -29,19 +29,9 @@ public class PlayerAttackState : PlayerBaseState
 
         if (Time.time - _lastAttackTime > playerData.AttackDelay)
         {
-            OnAttack();
+            owner.Combat.Attack();
             _lastAttackTime = Time.time;
         }
     }
 
-
-    private void OnAttack()
-    {
-        GameObject arrow = Global.Object.Spawn(StringKey.Arrow, true);
-
-        arrow.transform.position = owner.transform.position;
-        var pc = arrow.GetComponent<ProjectileController>();
-        pc.Setup(owner.Target);
-        pc.Shot(owner.Target.transform.position);
-    }
 }

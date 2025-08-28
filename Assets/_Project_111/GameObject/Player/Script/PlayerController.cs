@@ -18,6 +18,8 @@ public class PlayerController : CreatureController
     public PlayerMovement Movement { get; private set; }
     public PlayerStateMachine StateMachine { get; private set; }
     public PlayerStat Stat { get; private set; }
+    public PlayerCombat Combat { get; private set; }
+    public PlayerSkill Skill { get; private set; }
 
     public CharacterDataSO PlayerData => _playerData;
 
@@ -28,10 +30,14 @@ public class PlayerController : CreatureController
         Movement = this.GetOrAddComponent<PlayerMovement>();
         StateMachine = this.GetOrAddComponent<PlayerStateMachine>();
         Stat = this.GetOrAddComponent<PlayerStat>();
+        Combat = this.GetOrAddComponent<PlayerCombat>();
+        Skill = this.GetOrAddComponent<PlayerSkill>();
 
         StateMachine.Setup(this);
         Movement.Setup(this);
         Stat.Setup(this);
+        Combat.Setup(this);
+        Skill.Setup(this);
     }
 
     protected override void InitController()

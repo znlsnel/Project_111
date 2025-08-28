@@ -2,30 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using SongLib;
 using UnityEngine;
+using System;
 
 public class ProjectileController : MonoBehaviour
 {
+#region << =============== FIELD =============== >>
     [SerializeField] private Collider2D _collider;
     [SerializeField] private ProjectileDataSO _projectileData;
+    [SerializeField] private bool _canRotate = true;
 
 
-    private CreatureController _target;
+    private CreatureController _owner;
+    private CreatureController _target => _owner.Target;
     private Coroutine _moveCoroutine;
+    private float _speed = 1f;
+    #endregion
 
+#region << =============== PROPERTY =============== >>
+    public CreatureController Owner => _owner;
+    public CreatureController Target => _target;
+    #endregion
 
-    public void Setup(CreatureController target)
+#region << =============== EVENT =============== >>
+    public event Action OnDespawn;
+
+#endregion
+
+#region << =============== SETUP =============== >>
+    public void Setup(CreatureController owner)
     {
-        _target = target;
+        _owner = owner;
         _collider.enabled = true;
+        OnDespawn = null;
+        _speed = _projectileData.Speed;
     }
 
+    public void Despawn(float delay = 0f)
+    {
+        _collider.enabled = false;
+        Global.Object.Despawn(gameObject, delay);
+        OnDespawn?.Invoke();
+    }
+    #endregion
 
+
+    #region << =============== SHOT =============== >>
     public void Shot(Vector3 targetPosition)
     {
-        InitCoroutine();
+        if (_moveCoroutine != null)
+            StopCoroutine(_moveCoroutine);
+
         _moveCoroutine = StartCoroutine(CoMoveToTarget(targetPosition));
     }
-
+    #endregion
+    #region << =============== TRIGGER =============== >>
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject == _target.gameObject)
@@ -33,11 +63,11 @@ public class ProjectileController : MonoBehaviour
             HitTarget(_target);
         }
     }
-
+    #endregion
+    #region << =============== HIT =============== >>
     private void HitGround()
     {
-        _collider.enabled = false;
-        Global.Object.Despawn(gameObject, 1f);
+        Despawn(1f);
     }
 
     private void HitTarget(CreatureController target)
@@ -49,20 +79,23 @@ public class ProjectileController : MonoBehaviour
         }
 
         target.TakeDamage(_projectileData.Damage, DamageType.Normal);
-        InitCoroutine();
-        _collider.enabled = false;
-        Global.Object.Despawn(gameObject);
+        Despawn();
     }
-
-    private void InitCoroutine()
+    #endregion
+    #region << =============== SLOW =============== >>
+    public void OnSlow(float slowPercent, float duration)
     {
-        if (_moveCoroutine != null)
-        {
-            StopCoroutine(_moveCoroutine);
-            _moveCoroutine = null;
-        }
+        _speed = _projectileData.Speed * (1f - slowPercent);
+        StartCoroutine(CoSlow(duration));
     }
 
+    private IEnumerator CoSlow(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        _speed = _projectileData.Speed;
+    }
+    #endregion
+    #region << =============== MOVE =============== >>
     private IEnumerator CoMoveToTarget(Vector3 targetPosition)
     {
         Vector3 startPosition = transform.position;
@@ -94,7 +127,7 @@ public class ProjectileController : MonoBehaviour
             nextPos.y += _projectileData.ArcHeight * Mathf.Sin(Mathf.PI * lookaheadT);
             Vector3 direction = (nextPos - currentPos).normalized;
 
-            if (direction != Vector3.zero)
+            if (direction != Vector3.zero && _canRotate)
             {
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0, 0, angle);
@@ -112,4 +145,5 @@ public class ProjectileController : MonoBehaviour
 
         HitGround();
     }
+    #endregion
 }
