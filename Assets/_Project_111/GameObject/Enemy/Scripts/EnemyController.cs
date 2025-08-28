@@ -18,7 +18,7 @@ public class EnemyController : CommonController
         Stat = this.GetOrAddComponent<CommonStat>();
         Skill = this.GetOrAddComponent<CommonSkill>();
         Combat = this.GetOrAddComponent<CommonCombat>();
-        
+
         StateMachine.Setup(this);
         Movement.Setup(this);
         Stat.Setup(this);
@@ -33,6 +33,23 @@ public class EnemyController : CommonController
         Stat.Init();
         Skill.Init();
         Combat.Init();
-    }    
+
+        StartCoroutine(LaunchSkill());
+    }
+
+    private IEnumerator LaunchSkill()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(3f, 5f));
+
+            List<SkillBase> useableSkills = Skill.Skills.FindAll(s => s.IsUseable);
+            if (useableSkills.Count > 0 && !Target.IsDead)
+            {
+                SkillBase skill = useableSkills[Random.Range(0, useableSkills.Count)];
+                skill.ShotSkill();
+            }
+        }
+    }
 
 }

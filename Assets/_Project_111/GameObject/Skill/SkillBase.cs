@@ -18,10 +18,11 @@ public abstract class SkillBase : MonoBehaviour
 #region << =============== PROPERTY =============== >>
     public SkillDataSO SkillData => _skillData;
     public CreatureController Owner => _owner;
+    public bool IsUseable => Time.time - _lastShotTime >= _skillData.CoolTime;
 #endregion
 
 
-#region << =============== EVENT =============== >>
+    #region << =============== EVENT =============== >>
     public event Action OnCoolTimeStart;
     public event Action OnCoolTimeEnd;
 #endregion
