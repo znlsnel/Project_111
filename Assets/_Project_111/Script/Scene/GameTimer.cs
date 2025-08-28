@@ -3,7 +3,7 @@ using SongLib;
 using System;
 using System.Collections;
 
-public class GameTimer : SingletonWithMono<GameTimer>
+public class GameTimer : MonoBehaviour
 {
     /// <summary>
     /// ex) 1분 타이머 설정 => targetTime = 60f

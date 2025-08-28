@@ -13,6 +13,7 @@ public class UISceneGame : UIScene
 
     public UISceneGameTop Top => _top;
     public UISceneGameBottom Bottom => _bottom;
+    
     protected override void OnInit()
     {
 

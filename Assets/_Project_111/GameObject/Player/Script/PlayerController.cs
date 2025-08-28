@@ -46,6 +46,7 @@ public class PlayerController : CreatureController
 
     public override void Dead()
     {
+        base.Dead();
         DebugHelper.Log(EDebugType.Combat, "Player Dead");
     }
 

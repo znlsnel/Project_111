@@ -9,4 +9,5 @@ public static class Managers
 {
     // public static 클래스 => 클래스.Instance;
     public static ObjectManager Object => ObjectManager.Instance;
+    public static SceneFlowManager Scene => SceneFlowManager.Instance;
 }

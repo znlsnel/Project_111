@@ -46,7 +46,7 @@ public class EnemyController : CreatureController
 
     public override void Dead()
     {
-
+        base.Dead();
     }
 
     public override void Despawn()

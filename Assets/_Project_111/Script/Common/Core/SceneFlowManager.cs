@@ -10,4 +10,8 @@ public class SceneFlowManager : BaseSceneFlowManager<SceneFlowManager>
     }
 
 
+    public void LoadScene(ESceneType type)
+    {
+        LoadScene(StringKey.GetSceneName(type));
+    }
 }

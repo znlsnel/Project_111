@@ -11,6 +11,7 @@ namespace SongLib
         public CreatureController Target => _target;
         public bool IsInitialized { get; set; }
         public bool IsDead { get; protected set; }
+        public event Action OnDead;
 
         public virtual void Init()
         {
@@ -27,7 +28,12 @@ namespace SongLib
         protected abstract void SetupController();
         protected abstract void InitController();
 
-        public abstract void Dead();
+        public virtual void Dead()
+        {
+            IsDead = true;
+            OnDead?.Invoke();
+        }
+
         public abstract void Despawn();
 
         public abstract void TakeDamage(float amount, DamageType type);
