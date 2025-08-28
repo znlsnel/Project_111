@@ -16,7 +16,7 @@ public class UISceneGame : UIScene
     
     protected override void OnInit()
     {
-
+        
     }
 
     protected override void OnRefresh()

@@ -523,7 +523,7 @@ ScriptedImporter:
     uvTransform: {x: 157, y: 311}
   - name: TNT_Yellow_Frame_20
     originalName: 
-    pivot: {x: 0.44444445, y: -1.4705882}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -543,7 +543,7 @@ ScriptedImporter:
     uvTransform: {x: 481, y: 164}
   - name: TNT_Yellow_Frame_21
     originalName: 
-    pivot: {x: 0.44444445, y: -1.4423077}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -563,7 +563,7 @@ ScriptedImporter:
     uvTransform: {x: 446, y: 164}
   - name: TNT_Yellow_Frame_22
     originalName: 
-    pivot: {x: 0.46153846, y: -1.4705882}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -583,7 +583,7 @@ ScriptedImporter:
     uvTransform: {x: 314, y: 311}
   - name: TNT_Yellow_Frame_23
     originalName: 
-    pivot: {x: 0.48, y: -1.5}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -603,7 +603,7 @@ ScriptedImporter:
     uvTransform: {x: 483, y: 81}
   - name: TNT_Yellow_Frame_24
     originalName: 
-    pivot: {x: 0.44444445, y: -1.4705882}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -623,7 +623,7 @@ ScriptedImporter:
     uvTransform: {x: 448, y: 81}
   - name: TNT_Yellow_Frame_25
     originalName: 
-    pivot: {x: 0.42857143, y: -1.4705882}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:

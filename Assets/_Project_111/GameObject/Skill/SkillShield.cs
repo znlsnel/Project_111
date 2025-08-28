@@ -35,6 +35,9 @@ public class SkillShield : SkillBase
     {
         if (other.TryGetComponent<ProjectileController>(out ProjectileController pc))
         {
+            if (pc.Owner == Owner)
+                return;
+
             pc.Despawn();
         }
     }
@@ -44,7 +47,7 @@ public class SkillShield : SkillBase
     {
         yield return new WaitForSeconds(_shieldDuration);
         _shieldCollider.enabled = false;
-        
+
         _shield.transform.DOScale(0f, 0.3f).SetEase(Ease.InOutBack).OnComplete(() =>
         {
             _shield.SetActive(false);

@@ -7,7 +7,7 @@ public class StringKey
     public const string Player = "Player";
     public const string Enemy = "Enemy";
     public const string Arrow = "Arrow";
-    public const string Dynamite = "Dynamite";
+    public const string Dynamite = "Arrow_Dynamite";
 
     private static Dictionary<ESceneType, string> SceneNameDict = new Dictionary<ESceneType, string>()
     {
