@@ -7,15 +7,15 @@ using UnityEngine.EventSystems;
 
 public class UISceneGame : UIScene
 {
-    [SerializeField] private Button _leftBtn;
-    [SerializeField] private Button _rightBtn;
+    [SerializeField] private UISceneGameTop _top;
+    [SerializeField] private UISceneGameBottom _bottom;
 
+
+    public UISceneGameTop Top => _top;
+    public UISceneGameBottom Bottom => _bottom;
     protected override void OnInit()
     {
-        _leftBtn.GetOrAddComponent<UIPointerDownHandler>().onPointerDown += OnLeftButtonDown;
-        _leftBtn.GetOrAddComponent<UIPointerUpHandler>().onPointerUp += OnLeftButtonUp;
-        _rightBtn.GetOrAddComponent<UIPointerDownHandler>().onPointerDown += OnRightButtonDown;
-        _rightBtn.GetOrAddComponent<UIPointerUpHandler>().onPointerUp += OnRightButtonUp;
+
     }
 
     protected override void OnRefresh()
@@ -24,23 +24,5 @@ public class UISceneGame : UIScene
     }
 
 
-    private void OnLeftButtonDown(PointerEventData eventData)
-    {
-        Global.Event.Trigger((int)EEventType.MoveLeft, true);
-    }
 
-    private void OnLeftButtonUp(PointerEventData eventData)
-    {
-        Global.Event.Trigger((int)EEventType.MoveLeft, false);
-    }
-
-    private void OnRightButtonDown(PointerEventData eventData)
-    {
-        Global.Event.Trigger((int)EEventType.MoveRight, true);
-    }
-
-    private void OnRightButtonUp(PointerEventData eventData)
-    {   
-        Global.Event.Trigger((int)EEventType.MoveRight, false);
-    }
 }

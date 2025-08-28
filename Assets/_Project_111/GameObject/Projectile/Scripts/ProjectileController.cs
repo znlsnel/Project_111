@@ -9,11 +9,11 @@ public class ProjectileController : MonoBehaviour
     [SerializeField] private ProjectileDataSO _projectileData;
 
 
-    private GameObject _target;
+    private CreatureController _target;
     private Coroutine _moveCoroutine;
 
 
-    public void Setup(GameObject target)
+    public void Setup(CreatureController target)
     {
         _target = target;
         _collider.enabled = true;
@@ -28,9 +28,9 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject == _target)
+        if (other.gameObject == _target.gameObject)
         {
-            HitTarget();
+            HitTarget(_target);
         }
     }
 
@@ -40,8 +40,15 @@ public class ProjectileController : MonoBehaviour
         Global.Object.Despawn(gameObject, 1f);
     }
 
-    private void HitTarget()
+    private void HitTarget(CreatureController target)
     {
+        if (target == null)
+        {
+            DebugHelper.LogError(EDebugType.Combat, "HitTarget : target is null");
+            return;
+        }
+
+        target.TakeDamage(_projectileData.Damage, DamageType.Normal);
         InitCoroutine();
         _collider.enabled = false;
         Global.Object.Despawn(gameObject);
@@ -103,6 +110,6 @@ public class ProjectileController : MonoBehaviour
         transform.position = targetPosition;
         _moveCoroutine = null;
 
-        HitTarget();
+        HitGround();
     }
 }

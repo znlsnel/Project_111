@@ -15,8 +15,9 @@ public class EnemyController : CreatureController
     #region << =========== PROPERTIES =========== >>
 
 
-    public MonsterMovement Movement { get; private set; }
+    public EnemyMovement Movement { get; private set; }
     public EnemyStateMachine StateMachine { get; private set; }
+    public EnemyStat Stat { get; private set; }
 
     public CharacterDataSO MonsterData => _monsterData;
 
@@ -24,17 +25,21 @@ public class EnemyController : CreatureController
 
     protected override void SetupController()
     {
-        Movement = this.GetOrAddComponent<MonsterMovement>();
+        Movement = this.GetOrAddComponent<EnemyMovement>();
         StateMachine = this.GetOrAddComponent<EnemyStateMachine>();
+        Stat = this.GetOrAddComponent<EnemyStat>();
+
+        // StateMachine.Setup(this);
+        // Movement.Setup(this);
+        Stat.Setup(this);
     }
 
     protected override void InitController()
     {
-        StateMachine.Setup(this);
-        Movement.Setup(this);
 
       //  StateMachine.Init(ECreatureStateType.Idle);
      //   Movement.Init();
+        Stat.Init();
     }    
 
 
@@ -56,7 +61,10 @@ public class EnemyController : CreatureController
 
     public override void TakeDamage(float amount, DamageType type)
     {
-        
+        if (Stat.CurrentHealth <= 0f)
+            return;
+
+        Stat.CurrentHealth -= amount;
     }
 
 

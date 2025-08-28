@@ -200,7 +200,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7670776377302439599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 491c9bee236934e48b5fd888901a24a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 543b652a3562949efa0e55df325b5e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterData: {fileID: 11400000, guid: c2b1a7ae7a9ab4863adecd05eb44b5ef, type: 2}

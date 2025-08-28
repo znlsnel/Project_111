@@ -41,7 +41,7 @@ public class PlayerAttackState : PlayerBaseState
 
         arrow.transform.position = owner.transform.position;
         var pc = arrow.GetComponent<ProjectileController>();
-        pc.Setup(owner.Target.gameObject);
+        pc.Setup(owner.Target);
         pc.Shot(owner.Target.transform.position);
     }
 }

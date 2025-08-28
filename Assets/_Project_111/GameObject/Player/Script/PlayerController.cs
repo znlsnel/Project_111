@@ -17,6 +17,7 @@ public class PlayerController : CreatureController
 
     public PlayerMovement Movement { get; private set; }
     public PlayerStateMachine StateMachine { get; private set; }
+    public PlayerStat Stat { get; private set; }
 
     public CharacterDataSO PlayerData => _playerData;
 
@@ -26,15 +27,18 @@ public class PlayerController : CreatureController
     {
         Movement = this.GetOrAddComponent<PlayerMovement>();
         StateMachine = this.GetOrAddComponent<PlayerStateMachine>();
+        Stat = this.GetOrAddComponent<PlayerStat>();
+
+        StateMachine.Setup(this);
+        Movement.Setup(this);
+        Stat.Setup(this);
     }
 
     protected override void InitController()
     {
-        StateMachine.Setup(this);
-        Movement.Setup(this);
-
         StateMachine.Init(ECreatureStateType.Idle);
         Movement.Init();
+        Stat.Init();
     }
 
 
@@ -42,7 +46,7 @@ public class PlayerController : CreatureController
 
     public override void Dead()
     {
-
+        DebugHelper.Log(EDebugType.Combat, "Player Dead");
     }
 
     public override void Despawn()
@@ -58,7 +62,10 @@ public class PlayerController : CreatureController
 
     public override void TakeDamage(float amount, DamageType type)
     {
+        if (Stat.CurrentHealth <= 0f)
+            return;
 
+        Stat.CurrentHealth -= amount;
     }
 
 

@@ -17,6 +17,7 @@ namespace SongLib
             if (!IsInitialized)
             {
                 SetupController();
+                IsInitialized = true;
             }
 
             InitController();
