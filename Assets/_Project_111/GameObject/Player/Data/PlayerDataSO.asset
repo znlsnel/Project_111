@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 2.64
   AttackDelay: 0.5
-  AttackPower: 10
+  AttackPower: 37
   ArrowAmount: 1
+  MaxHP: 1000
