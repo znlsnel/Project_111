@@ -2,7 +2,7 @@ using UnityEngine;
 using SongLib;
 using System.Collections.Generic;
 
-public class PlayerCombat : CreatureCombat<PlayerController>
+public class CommonCombat : CreatureCombat<CommonController>
 {
 
     public override void Attack()

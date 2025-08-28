@@ -2,25 +2,28 @@ using UnityEngine;
 using SongLib;
 
 
-public class EnemyStat : CreatureStat<EnemyController>
+public class CommonStat : CreatureStat<CommonController>
 {
     public override Stat MaxHPStat { get; protected set; }
 
     public override float MaxHP => MaxHPStat.FinalValue;
 
-    protected override void ChangedHealthPoint(float fillAmount)
+
+    protected override void SetupStats()
     {
-        
+        MaxHPStat = new Stat(owner.Data.MaxHP);
+        CurrentHealth = MaxHP;
     }
 
     protected override void InitMetrics()
     {
         CurrentHealth = MaxHP;
     }
-
-    protected override void SetupStats()
+    
+    protected override void ChangedHealthPoint(float fillAmount)
     {
-        MaxHPStat = new Stat(owner.MonsterData.MaxHP);
-        CurrentHealth = MaxHP;
+        
     }
+
+
 }

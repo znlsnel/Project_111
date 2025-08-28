@@ -11,7 +11,7 @@ public class PlayerMovement : CreatureMovement<PlayerController>
     #endregion
 
     #region << =========== PROPERTIES =========== >>
-    public float MoveSpeed => owner.PlayerData.MoveSpeed;
+    public float MoveSpeed => owner.Data.MoveSpeed;
     public bool IsMoving => _onMoveLeft != _onMoveRight;
     #endregion
 

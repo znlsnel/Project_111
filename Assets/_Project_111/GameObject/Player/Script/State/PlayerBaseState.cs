@@ -4,7 +4,7 @@ using SongLib;
 public abstract class PlayerBaseState : CreatureState<PlayerController>
 {
 
-    protected CharacterDataSO playerData => owner.PlayerData;
+    protected CharacterDataSO playerData => owner.Data;
 
     public abstract override void Enter(object param);
     public abstract override void Exit();

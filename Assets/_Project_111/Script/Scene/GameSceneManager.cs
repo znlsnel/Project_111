@@ -9,10 +9,21 @@ public class GameSceneManager : BaseSceneManager<GameSceneManager>
     [SerializeField] private UISceneGame _uiSceneGame;
     [SerializeField] private Transform _playerSpawnPoint;
     [SerializeField] private Transform _enemySpawnPoint;
+    [SerializeField] private Rect _enemyMoveArea;
 
 
     private int _gameTime = 60;
     private GameTimer _gameTimer;
+
+    public Rect EnemyMoveArea => _enemyMoveArea;
+
+#if UNITY_EDITOR
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(_enemyMoveArea.center, _enemyMoveArea.size);
+    }
+#endif
 
     protected override void Init()
     {

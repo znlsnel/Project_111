@@ -3,23 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using SongLib;
 
-public class EnemyController : CreatureController
+public class EnemyController : CommonController
 {
-
-    #region << =========== FIELD =========== >>
-
-    [SerializeField] private CharacterDataSO _monsterData;
-
-    #endregion
-
     #region << =========== PROPERTIES =========== >>
-
-
     public EnemyMovement Movement { get; private set; }
     public EnemyStateMachine StateMachine { get; private set; }
-    public EnemyStat Stat { get; private set; }
-
-    public CharacterDataSO MonsterData => _monsterData;
 
     #endregion
 
@@ -27,45 +15,24 @@ public class EnemyController : CreatureController
     {
         Movement = this.GetOrAddComponent<EnemyMovement>();
         StateMachine = this.GetOrAddComponent<EnemyStateMachine>();
-        Stat = this.GetOrAddComponent<EnemyStat>();
-
-        // StateMachine.Setup(this);
-        // Movement.Setup(this);
+        Stat = this.GetOrAddComponent<CommonStat>();
+        Skill = this.GetOrAddComponent<CommonSkill>();
+        Combat = this.GetOrAddComponent<CommonCombat>();
+        
+        StateMachine.Setup(this);
+        Movement.Setup(this);
         Stat.Setup(this);
+        Combat.Setup(this);
+        Skill.Setup(this);
     }
 
     protected override void InitController()
     {
-
-      //  StateMachine.Init(ECreatureStateType.Idle);
-     //   Movement.Init();
+        StateMachine.Init(ECreatureStateType.Idle);
+        Movement.Init();
         Stat.Init();
+        Skill.Init();
+        Combat.Init();
     }    
-
-
-
-    public override void Dead()
-    {
-        base.Dead();
-    }
-
-    public override void Despawn()
-    {
-        
-    }
-
-    public override void KnockBack(float knockbackPower)
-    {
-        
-    }
-
-    public override void TakeDamage(float amount, DamageType type)
-    {
-        if (Stat.CurrentHealth <= 0f)
-            return;
-
-        Stat.CurrentHealth -= amount;
-    }
-
 
 }

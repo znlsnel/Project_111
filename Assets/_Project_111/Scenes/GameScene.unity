@@ -8883,6 +8883,12 @@ MonoBehaviour:
   _uiSceneGame: {fileID: 1649720435}
   _playerSpawnPoint: {fileID: 1942239815}
   _enemySpawnPoint: {fileID: 1610158500}
+  _enemyMoveArea:
+    serializedVersion: 2
+    x: 2.52
+    y: -1.89
+    width: 5.97
+    height: 0.83
 --- !u!1 &2069072121
 GameObject:
   m_ObjectHideFlags: 0

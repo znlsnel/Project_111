@@ -2,10 +2,10 @@ using UnityEngine;
 using SongLib;
 using System.Collections.Generic;
 
-public class PlayerSkill : CreatureSkill<PlayerController>
+public class CommonSkill : CreatureSkill<CommonController>
 {
-    
-    [SerializeField] private ESkillType[] _skillTypes;
+
+    [SerializeField] private ESkillType[] _skillTypes = new ESkillType[0];
 
     private List<SkillBase> _skills = new List<SkillBase>();
     private CreatureController _target;
