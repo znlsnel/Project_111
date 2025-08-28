@@ -14,7 +14,6 @@ namespace SongLib
         private static IPoolManager _poolManager;
         private static IUIManager _uiManager;
         private static IObjectManager _objectManager;
-        private static ITimeManager _timeManager;
         #endregion
 
         #region << ========== UTIL MANAGERS PROPERTIES ========== >>
@@ -25,7 +24,6 @@ namespace SongLib
         public static IPoolManager UtilPool => _poolManager;
         public static IUIManager UtilUI => _uiManager;
         public static IObjectManager UtilObject => _objectManager;
-        public static ITimeManager UtilTime => _timeManager;
         #endregion
 
         #region << ========== MANAGERS PROPERTIES ========== >>
@@ -36,7 +34,6 @@ namespace SongLib
         public static IPoolManager Pool => _poolManager;
         public static IUIManager UI => _uiManager;
         public static IObjectManager Object => _objectManager;
-        public static ITimeManager Time => _timeManager;
         #endregion
 
         #region << ========== SETUP ========== >>
@@ -58,7 +55,6 @@ namespace SongLib
         public static void Init(IPoolManager poolManager) => _poolManager = poolManager;
         public static void Init(IUIManager uiManager) => _uiManager = uiManager;
         public static void Init(IObjectManager objectManager) => _objectManager = objectManager;
-        public static void Init(ITimeManager timeManager) => _timeManager = timeManager;
         #endregion
     }
 }

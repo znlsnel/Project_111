@@ -15,6 +15,8 @@ public class UIMoveInput : UIBase
         _leftBtn.GetOrAddComponent<UIPointerUpHandler>().onPointerUp += OnLeftButtonUp;
         _rightBtn.GetOrAddComponent<UIPointerDownHandler>().onPointerDown += OnRightButtonDown;
         _rightBtn.GetOrAddComponent<UIPointerUpHandler>().onPointerUp += OnRightButtonUp;
+
+        SetCanvasGroupAll(true);
     }
 
     protected override void OnRefresh()
