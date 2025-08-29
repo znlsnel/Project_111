@@ -101,6 +101,8 @@ public class ProjectileController : MonoBehaviour
         _speedScale = 1f;
     }
     #endregion
+
+
     #region << =============== MOVE =============== >>
     private IEnumerator CoMoveToTarget(Vector3 targetPosition)
     {
@@ -111,6 +113,11 @@ public class ProjectileController : MonoBehaviour
             transform.position = targetPosition;
             yield break;
         }
+
+        float arcHeight = projectileData.ArcHeight;
+        arcHeight *= Mathf.Max(0.2f, Mathf.Min(distanceToTarget / 20f, 1f));
+        
+
 
         float speed = projectileData.Speed;
         float totalTime = distanceToTarget / speed;
@@ -125,13 +132,13 @@ public class ProjectileController : MonoBehaviour
             Vector3 currentPos = Vector3.Lerp(startPosition, targetPosition, t);
 
             // 포물선의 높이 계산 (아치 형태)
-            float height = projectileData.ArcHeight * Mathf.Sin(Mathf.PI * t);
+            float height = arcHeight * Mathf.Sin(Mathf.PI * t);
             currentPos.y += height;
 
             // 화살표가 이동 방향을 바라보도록 회전
             float lookaheadT = Mathf.Clamp01(t + (deltaTime / totalTime));
             Vector3 nextPos = Vector3.Lerp(startPosition, targetPosition, lookaheadT);
-            nextPos.y += projectileData.ArcHeight * Mathf.Sin(Mathf.PI * lookaheadT);
+            nextPos.y += arcHeight * Mathf.Sin(Mathf.PI * lookaheadT);
             Vector3 direction = (nextPos - currentPos).normalized;
 
             if (direction != Vector3.zero && _canRotate)
