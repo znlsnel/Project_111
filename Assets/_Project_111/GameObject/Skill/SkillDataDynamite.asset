@@ -16,5 +16,5 @@ MonoBehaviour:
   _description: "\uD3ED\uBC1C\uC744 \uC77C\uC73C\uD0A4\uB294 \uB2E4\uC774\uB108\uB9C8\uC774\uD2B8\uB97C
     \uB358\uC9D0"
   _skillType: 2
-  _icon: {fileID: 3763493712731975368, guid: 86b88b9ef35074aea9ffc7371f4eb8d4, type: 3}
+  _icon: {fileID: 21300000, guid: b5c5901e53352415497a528ab641fc97, type: 3}
   _coolTime: 10

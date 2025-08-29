@@ -16,4 +16,4 @@ MonoBehaviour:
   AttackDelay: 0.5
   AttackPower: 37
   ArrowAmount: 1
-  MaxHP: 1000
+  MaxHP: 2000

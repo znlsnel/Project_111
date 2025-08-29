@@ -30,7 +30,9 @@ namespace SongLib
         {
             if (Application.isPlaying) return;
             
+#if UNITY_EDITOR
             AutoCollectUIBase();
+#endif
         }
 
 #if UNITY_EDITOR

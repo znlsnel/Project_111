@@ -30,6 +30,7 @@ public class GameSceneManager : BaseSceneManager<GameSceneManager>
 
     protected override void Init()
     {
+  
         _cameraEffect.Init();
         _gameTimer = new GameObject("GameTimer").AddComponent<GameTimer>();
         Time.timeScale = 1f;

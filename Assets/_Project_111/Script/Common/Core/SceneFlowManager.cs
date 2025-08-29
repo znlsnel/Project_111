@@ -1,5 +1,7 @@
 using UnityEngine;
 using SongLib;
+using DG.Tweening;
+using Sirenix.OdinInspector;
 
 public class SceneFlowManager : BaseSceneFlowManager<SceneFlowManager>
 {
@@ -10,8 +12,17 @@ public class SceneFlowManager : BaseSceneFlowManager<SceneFlowManager>
     }
 
 
+
+    [Button]
+    public void ReStart()
+    {
+        LoadScene(ESceneType.Game);
+    }
+
     public void LoadScene(ESceneType type)
     {
+        DOTween.KillAll();
+
         LoadScene(StringKey.GetSceneName(type));
     }
 }

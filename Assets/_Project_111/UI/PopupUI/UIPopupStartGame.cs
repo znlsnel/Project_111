@@ -4,7 +4,6 @@ using UnityEngine;
 using SongLib;
 using UnityEngine.UI;
 using DG.Tweening;
-using VInspector.Libs;
 
 public class UIPopupStartGame : UIPopup
 {
@@ -19,11 +18,12 @@ public class UIPopupStartGame : UIPopup
 
     protected override void OnInitPopup()
     {
-        MoveSliderEffectImage();
     }
 
     protected override void OnRefresh()
     {
+        MoveSliderEffectImage();
+
         _slider.onValueChanged.RemoveAllListeners();
         _slider.onValueChanged.AddListener(OnSliderValueChanged);
         _slider.onValueChanged.AddListener(GameSceneManager.Instance.CameraEffect.SetShakeGain);
@@ -44,7 +44,7 @@ public class UIPopupStartGame : UIPopup
 
     private void OnSliderValueChanged(float value)
     {
-        _backgroundImg.color = _backgroundImg.color.SetAlpha(1f -value);
+        _backgroundImg.color = new Color(_backgroundImg.color.r, _backgroundImg.color.g, _backgroundImg.color.b, 1f - value);
 
         if (value == 1f)
         {

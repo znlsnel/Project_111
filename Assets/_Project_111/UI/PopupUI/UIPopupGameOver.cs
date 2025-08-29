@@ -5,7 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
-using VInspector.Libs;
+
 
 public class UIPopupGameOver : UIPopup
 {
@@ -41,7 +41,7 @@ public class UIPopupGameOver : UIPopup
         _resultText.text = isPlayerWin ? "YOU WIN ! !" : "YOU LOSE..";
 
         _backgroundImg.DOKill();
-        _backgroundImg.color = _backgroundImg.color.SetAlpha(0f);
+        _backgroundImg.color = new Color(_backgroundImg.color.r, _backgroundImg.color.g, _backgroundImg.color.b, 0f);
         _backgroundImg.DOFade(0.95f, 0.5f).SetEase(Ease.InQuad).SetUpdate(true);
 
 
