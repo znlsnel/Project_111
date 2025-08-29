@@ -8,7 +8,7 @@ public class EnemyIdleState  : EnemyState
 
     public override void Enter(object param)
     {
-        
+        owner.Animator.StopMove();
 
     }
 

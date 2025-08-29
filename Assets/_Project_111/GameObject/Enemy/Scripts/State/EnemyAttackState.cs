@@ -25,9 +25,9 @@ public class EnemyAttackState : EnemyState
             owner.StateMachine.ChangeState(ECreatureStateType.Idle);
 
 
-        if (Time.time - _lastAttackTime > owner.Data.AttackDelay)
+        else if (Time.time - _lastAttackTime > owner.Data.AttackDelay)
         {
-            owner.Combat.Attack();
+            owner.Animator.TriggerAttack();
             _lastAttackTime = Time.time;
         }
     }

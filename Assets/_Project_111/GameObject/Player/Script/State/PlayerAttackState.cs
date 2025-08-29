@@ -7,8 +7,6 @@ public class PlayerAttackState : PlayerBaseState
 
     public override void Enter(object param)
     {
-        DebugHelper.Log(EDebugType.State, "PlayerAttackState");
-
 
     }
 
@@ -27,9 +25,9 @@ public class PlayerAttackState : PlayerBaseState
             owner.StateMachine.ChangeState(ECreatureStateType.Idle);
 
 
-        if (Time.time - _lastAttackTime > playerData.AttackDelay)
+        else if (Time.time - _lastAttackTime > playerData.AttackDelay)
         {
-            owner.Combat.Attack();
+            owner.Animator.TriggerAttack();
             _lastAttackTime = Time.time;
         }
     }

@@ -6,13 +6,13 @@ public class PlayerDeadState : PlayerBaseState
 
     public override void Enter(object param)
     {
-        DebugHelper.Log(EDebugType.State, "PlayerDeadState");
-    }
+        owner.Animator.DieTrue();
+    }   
 
     public override void Exit()
     {
-
-    }
+        owner.Animator.DieFalse();
+    }   
 
 
 

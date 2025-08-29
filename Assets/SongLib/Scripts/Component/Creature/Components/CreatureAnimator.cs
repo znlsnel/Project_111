@@ -13,7 +13,6 @@ namespace SongLib
         protected SpriteRenderer[] spriteRenderers;
 
         [SerializeField] protected Animator animator;
-        [SerializeField] protected Collider2D _collider2D;
 
         protected Color currentColor = Color.white;
         protected float currentAlpha = 1f;
@@ -45,12 +44,6 @@ namespace SongLib
                 animator.SetTrigger(_defaultSkillHash);
             }
         }
-
-        #region << =========== PROPERTIES =========== >>
-
-        public Collider2D Collider2D => _collider2D;
-
-        #endregion
 
         #region << =========== INIT =========== >>
 

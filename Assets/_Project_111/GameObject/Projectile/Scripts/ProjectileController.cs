@@ -15,7 +15,7 @@ public class ProjectileController : MonoBehaviour
     private CreatureController _owner;
     private CreatureController _target => _owner.Target;
     private Coroutine _moveCoroutine;
-    private float _speed = 1f;
+    private float _speedScale = 1f;
     #endregion
 
 #region << =============== PROPERTY =============== >>
@@ -34,7 +34,7 @@ public class ProjectileController : MonoBehaviour
         _owner = owner;
         _collider.enabled = true;
         OnDespawn = null;
-        _speed = _projectileData.Speed;
+        _speedScale = 1f;
     }
 
     public void Despawn(float delay = 0f)
@@ -86,14 +86,14 @@ public class ProjectileController : MonoBehaviour
     #region << =============== SLOW =============== >>
     public void OnSlow(float slowPercent, float duration)
     {
-        _speed = _projectileData.Speed * (1f - slowPercent);
+        _speedScale = slowPercent;
         StartCoroutine(CoSlow(duration));
     }
 
     private IEnumerator CoSlow(float duration)
     {
         yield return new WaitForSeconds(duration);
-        _speed = _projectileData.Speed;
+        _speedScale = 1f;
     }
     #endregion
     #region << =============== MOVE =============== >>
@@ -114,6 +114,7 @@ public class ProjectileController : MonoBehaviour
         while (elapsedTime < totalTime)
         {
             float t = elapsedTime / totalTime;
+            float deltaTime = Time.deltaTime * _speedScale;
 
             // 포물선 궤적 계산
             Vector3 currentPos = Vector3.Lerp(startPosition, targetPosition, t);
@@ -123,7 +124,7 @@ public class ProjectileController : MonoBehaviour
             currentPos.y += height;
 
             // 화살표가 이동 방향을 바라보도록 회전
-            float lookaheadT = Mathf.Clamp01(t + (Time.deltaTime / totalTime));
+            float lookaheadT = Mathf.Clamp01(t + (deltaTime / totalTime));
             Vector3 nextPos = Vector3.Lerp(startPosition, targetPosition, lookaheadT);
             nextPos.y += _projectileData.ArcHeight * Mathf.Sin(Mathf.PI * lookaheadT);
             Vector3 direction = (nextPos - currentPos).normalized;
@@ -136,7 +137,7 @@ public class ProjectileController : MonoBehaviour
 
             transform.position = currentPos;
 
-            elapsedTime += Time.deltaTime;
+            elapsedTime += deltaTime;
             yield return null;
         }
 

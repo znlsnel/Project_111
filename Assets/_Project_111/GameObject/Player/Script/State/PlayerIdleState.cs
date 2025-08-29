@@ -6,7 +6,7 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void Enter(object param)
     {
-        DebugHelper.Log(EDebugType.State, "PlayerIdleState");
+        owner.Animator.StopMove();
     }
 
     public override void Exit()

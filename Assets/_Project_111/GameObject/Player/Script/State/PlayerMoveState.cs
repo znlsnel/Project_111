@@ -5,12 +5,12 @@ public class PlayerMoveState : PlayerBaseState
 {
     public override void Enter(object param)
     {
-        DebugHelper.Log(EDebugType.State, "PlayerMoveState");
-    }
+        owner.Animator.StartMove();
+    }   
 
     public override void Exit()
-    {
-
+    {   
+        owner.Animator.StopMove();
     }
 
     public override void Tick(float deltaTime)

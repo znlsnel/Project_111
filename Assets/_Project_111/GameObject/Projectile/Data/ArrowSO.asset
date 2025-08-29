@@ -16,5 +16,4 @@ MonoBehaviour:
   Damage: 3
   KnockbackPower: 1
   KnockbackTime: 1
-  FlightTime: 1
-  ArcHeight: 2
+  ArcHeight: 5

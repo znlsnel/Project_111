@@ -19,13 +19,35 @@ public abstract class CommonController : CreatureController
     public CommonStat Stat { get; protected set; }
     public CommonCombat Combat { get; protected set; }
     public CommonSkill Skill { get; protected set; }
+    public CommonAnimator Animator { get; protected set; }
+    public CommonAnimationEvent AnimationEvent { get; protected set; }
 
 
     #endregion
 
-    protected abstract override void SetupController();
+    protected override void SetupController()
+    {
+        AnimationEvent = GetComponentInChildren<CommonAnimationEvent>();
+        Animator = GetComponentInChildren<CommonAnimator>();
+        Stat = this.GetOrAddComponent<CommonStat>();
+        Combat = this.GetOrAddComponent<CommonCombat>();
+        Skill = this.GetOrAddComponent<CommonSkill>();
 
-    protected abstract override void InitController();
+        AnimationEvent.Setup(this);
+        Animator.Setup(this);
+        Stat.Setup(this);
+        Combat.Setup(this);
+        Skill.Setup(this);
+    }
+
+    protected override void InitController()
+    {
+        AnimationEvent.Init();
+        Animator.Init();
+        Stat.Init();
+        Combat.Init();
+        Skill.Init();
+    }
 
 
 
