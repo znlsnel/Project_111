@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SongLib;
+using System;
 
 
 public abstract class CommonController : CreatureController
@@ -23,6 +24,7 @@ public abstract class CommonController : CreatureController
     public CommonAnimationEvent AnimationEvent { get; protected set; }
 
 
+    public event Action OnTakeDamage;
     #endregion
 
     protected override void SetupController()
@@ -75,6 +77,7 @@ public abstract class CommonController : CreatureController
             return;
 
         Stat.CurrentHealth -= amount;
+        OnTakeDamage?.Invoke();
     }
 
 
