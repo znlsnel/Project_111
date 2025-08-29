@@ -8,6 +8,8 @@ using DG.Tweening;
 
 public class UISkillButton : UIBase
 {
+    [SerializeField] private GameObject _edgeObj;
+    [SerializeField] private Image _progressImg;
     [SerializeField] private Image _skillIcon;
     [SerializeField] private Button _skillBtn;
     [SerializeField] private Image _maskImage;
@@ -22,7 +24,7 @@ public class UISkillButton : UIBase
         _skill = skill;
         _skillData = _skill.SkillData;
         _skillIcon.sprite = _skillData.Icon;
-        
+
     }
 
     protected override void OnInit()
@@ -32,6 +34,8 @@ public class UISkillButton : UIBase
         _maskImage.DOFade(0, 0f);
         _coolTimeText.gameObject.SetActive(false);
         SetCanvasGroupAll(true);
+
+        _edgeObj.SetActive(false);
         transform.localScale = Vector3.one;
 
     }
@@ -48,15 +52,18 @@ public class UISkillButton : UIBase
 
         if (_skill.ShotSkill())
         {
+            StartCoroutine(CoSetProgress(_skillData.CoolTime));
+
             _maskImage.DOFade(0.5f, 0.5f).SetEase(Ease.OutBack);
             _coolTimeText.gameObject.SetActive(true);
             StartCoroutine(CoSetCoolTime());
             _isCooling = true;
 
             transform.DOScale(0.8f, 0.3f).SetEase(Ease.OutQuart);
+
         }
     }
-    
+
     private IEnumerator CoSetCoolTime()
     {
         int coolTime = _skillData.CoolTime;
@@ -71,5 +78,21 @@ public class UISkillButton : UIBase
         _coolTimeText.gameObject.SetActive(false);
         transform.DOScale(1f, 0.3f).SetEase(Ease.InOutBack);
         _isCooling = false;
+    }
+
+
+    private IEnumerator CoSetProgress(float duration)
+    {
+        float currentTime = 0f;
+        _edgeObj.SetActive(true);
+
+        while (currentTime < duration)
+        {
+            _progressImg.fillAmount = currentTime / duration;
+            currentTime += Time.deltaTime;
+            yield return null;
+        }
+
+        _edgeObj.SetActive(false);
     }
 }
