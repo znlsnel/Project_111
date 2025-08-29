@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dynamite
   m_EditorClassIdentifier: 
   Speed: 6
-  Damage: 50
+  Damage: 200
   KnockbackPower: 1
   KnockbackTime: 1
   ArcHeight: 6

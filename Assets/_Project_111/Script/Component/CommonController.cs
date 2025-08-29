@@ -58,6 +58,7 @@ public abstract class CommonController : CreatureController
     {
         base.Dead();
         DebugHelper.Log(EDebugType.Combat, "Player Dead");
+        Managers.Object.CreateEffect(EEffectType.Blood, transform.position, 5f);
     }
 
     public override void Despawn()
@@ -75,6 +76,10 @@ public abstract class CommonController : CreatureController
     {
         if (Stat.CurrentHealth <= 0f)
             return;
+
+        var damageUI = Global.Object.Spawn(StringKey.DamageUI, true);
+        damageUI.transform.position = transform.position + new Vector3(0f, 0.7f, 0f);
+        damageUI.GetComponent<UIWorldDamage>().SetDamage(amount);
 
         Stat.CurrentHealth -= amount;
         OnTakeDamage?.Invoke();

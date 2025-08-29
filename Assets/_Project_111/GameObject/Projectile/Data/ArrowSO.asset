@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ArrowSO
   m_EditorClassIdentifier: 
   Speed: 7
-  Damage: 200
+  Damage: 100
   KnockbackPower: 1
   KnockbackTime: 1
   ArcHeight: 5

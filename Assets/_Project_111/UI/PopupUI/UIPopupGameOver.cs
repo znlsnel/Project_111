@@ -36,9 +36,9 @@ public class UIPopupGameOver : UIPopup
     /// default : 무승부
     /// </summary>
     /// <param name="result"></param>
-    public void SetResult(int result)
+    public void SetResult(bool isPlayerWin)
     {
-        _resultText.text = result == 1 ? "YOU WIN ! !" : result == 0 ? "YOU LOSE.." : "IT'S DRAW";
+        _resultText.text = isPlayerWin ? "YOU WIN ! !" : "YOU LOSE..";
 
         _backgroundImg.DOKill();
         _backgroundImg.color = _backgroundImg.color.SetAlpha(0f);

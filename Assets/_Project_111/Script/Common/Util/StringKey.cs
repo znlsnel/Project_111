@@ -8,6 +8,7 @@ public class StringKey
     public const string Enemy = "Enemy";
     public const string Arrow = "Arrow";
     public const string Dynamite = "Arrow_Dynamite";
+    public const string DamageUI = "UIWorldDamage";
 
 
 
@@ -30,6 +31,7 @@ public class StringKey
         {EEffectType.ShieldHit, "ShieldEffect"},
         {EEffectType.Hit, "HitEffect"},
         {EEffectType.AirBrake, "AirBrakeEffect"},
+        {EEffectType.Blood, "BloodEffect"},
     };
 
     public static string GetSceneName(ESceneType type) => SceneNameDict[type];

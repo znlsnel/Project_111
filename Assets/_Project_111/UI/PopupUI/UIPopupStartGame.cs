@@ -20,13 +20,14 @@ public class UIPopupStartGame : UIPopup
     protected override void OnInitPopup()
     {
         MoveSliderEffectImage();
-
-        _slider.onValueChanged.AddListener(OnSliderValueChanged);
-
     }
 
     protected override void OnRefresh()
     {
+        _slider.onValueChanged.RemoveAllListeners();
+        _slider.onValueChanged.AddListener(OnSliderValueChanged);
+        _slider.onValueChanged.AddListener(GameSceneManager.Instance.CameraEffect.SetShakeGain);
+
         _slider.value = 0f;
         OnSliderValueChanged(0f);
     }

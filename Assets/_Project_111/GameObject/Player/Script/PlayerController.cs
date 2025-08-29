@@ -27,11 +27,18 @@ public class PlayerController : CommonController
     }
 
     protected override void InitController()
-    {   
+    {
         base.InitController();
 
         StateMachine.Init(ECreatureStateType.Idle);
         Movement.Init();
+    }
+    
+
+    public override void TakeDamage(float amount, DamageType type)
+    {
+        base.TakeDamage(amount, type);
+        GameSceneManager.Instance.CameraEffect.ZoomEffect();
     }
 
 

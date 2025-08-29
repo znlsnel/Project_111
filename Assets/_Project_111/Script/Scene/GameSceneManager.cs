@@ -11,13 +11,14 @@ public class GameSceneManager : BaseSceneManager<GameSceneManager>
     [SerializeField] private Transform _playerSpawnPoint;
     [SerializeField] private Transform _enemySpawnPoint;
     [SerializeField] private Rect _enemyMoveArea;
-
+    [SerializeField] private CameraEffect _cameraEffect;
 
     private int _gameTime = 60;
     private GameTimer _gameTimer;
     private bool _isGameOver = false;
 
     public Rect EnemyMoveArea => _enemyMoveArea;
+    public CameraEffect CameraEffect => _cameraEffect;
 
 #if UNITY_EDITOR
     public void OnDrawGizmos()
@@ -29,6 +30,7 @@ public class GameSceneManager : BaseSceneManager<GameSceneManager>
 
     protected override void Init()
     {
+        _cameraEffect.Init();
         _gameTimer = new GameObject("GameTimer").AddComponent<GameTimer>();
         Time.timeScale = 1f;
         _uiSceneGame.SetActive(false);
@@ -46,6 +48,8 @@ public class GameSceneManager : BaseSceneManager<GameSceneManager>
         _uiSceneGame.Init();
 
         _gameTimer.SetTimer(OnTimeChanged, _gameTime);
+
+        _cameraEffect.SetDefaultMode();
     }
 
     private void SetObject()
@@ -78,7 +82,7 @@ public class GameSceneManager : BaseSceneManager<GameSceneManager>
 
         _isGameOver = true;
 
-        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0f, 2f)
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0f, 3f)
             .SetEase(Ease.OutQuad)
             .SetUpdate(true)
             .OnComplete(() =>
@@ -86,17 +90,11 @@ public class GameSceneManager : BaseSceneManager<GameSceneManager>
                 Time.timeScale = 0f;
             });
 
-        bool isPlayerDead = Managers.Object.Player.Stat.CurrentHealth <= 0;
-        bool isEnemyDead = Managers.Object.Enemy.Stat.CurrentHealth <= 0;
+        float playerHp = Managers.Object.Player.Stat.CurrentHealth;
+        float enemyHp = Managers.Object.Enemy.Stat.CurrentHealth;
 
         UIPopupGameOver popup = Global.Popup.OpenPopup(EPopupType.GameOver) as UIPopupGameOver;
-
-        if (!isPlayerDead && isEnemyDead)
-            popup.SetResult(1);
-        else if (isPlayerDead && !isEnemyDead)
-            popup.SetResult(0);
-        else
-            popup.SetResult(2);
+        popup.SetResult(playerHp > enemyHp);
     }
 
 }
