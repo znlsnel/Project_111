@@ -4,4 +4,5 @@ public enum ESkillType
     Dynamite,
     Shield,
     AirBrake,
+    Fire,
 }

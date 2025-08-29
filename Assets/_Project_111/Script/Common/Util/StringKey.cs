@@ -9,6 +9,7 @@ public class StringKey
     public const string Arrow = "Arrow";
     public const string Dynamite = "Arrow_Dynamite";
     public const string DamageUI = "UIWorldDamage";
+    public const string FireArrow = "Arrow_Fire";
 
 
 
@@ -23,6 +24,7 @@ public class StringKey
         {ESkillType.Dynamite, "Dynamite"},
         {ESkillType.Shield, "Shield"},
         {ESkillType.AirBrake, "AirBrake"},
+        {ESkillType.Fire, "FireArrow"},
     };
 
     private static Dictionary<EEffectType, string> EffectNameDict = new Dictionary<EEffectType, string>()
@@ -32,6 +34,7 @@ public class StringKey
         {EEffectType.Hit, "HitEffect"},
         {EEffectType.AirBrake, "AirBrakeEffect"},
         {EEffectType.Blood, "BloodEffect"},
+        {EEffectType.Fire, "FireEffect"},
     };
 
     public static string GetSceneName(ESceneType type) => SceneNameDict[type];

@@ -40,7 +40,7 @@ public class ProjectileController : MonoBehaviour
         _speedScale = 1f;
     }
 
-    public void Despawn(float delay = 0f)
+    public virtual void Despawn(float delay = 0f)
     {
         _collider.enabled = false;
         Global.Object.Despawn(gameObject, delay);

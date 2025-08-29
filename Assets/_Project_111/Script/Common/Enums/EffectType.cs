@@ -5,4 +5,5 @@ public enum EEffectType
     ShieldHit,
     AirBrake,
     Blood,
+    Fire,
 }

@@ -98,6 +98,11 @@ public class ObjectManager : BaseObjectManager<ObjectManager>
         return CreateProjectile(owner, targetPosition, StringKey.Dynamite);
     }
 
+    public ProjectileController CreateFireArrow(CreatureController owner, Vector3 targetPosition)
+    {
+        return CreateProjectile(owner, targetPosition, StringKey.FireArrow);
+    }
+
     private ProjectileController CreateProjectile(CreatureController owner, Vector3 targetPosition, string key)
     {
         GameObject go = base.Spawn(key, true);
