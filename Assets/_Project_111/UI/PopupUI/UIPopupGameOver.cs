@@ -4,11 +4,14 @@ using SongLib;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using DG.Tweening;
+using VInspector.Libs;
 
 public class UIPopupGameOver : UIPopup
 {
 
     #region << ============== FIELD ============== >>
+    [SerializeField] private Image _backgroundImg;
     [SerializeField] private TextMeshProUGUI _resultText;
     [SerializeField] private Button _retryButton;
     #endregion
@@ -18,6 +21,8 @@ public class UIPopupGameOver : UIPopup
     protected override void OnInitPopup()
     {
         _retryButton.onClick.AddListener(OnRetryButtonClicked);
+
+
     }
 
     protected override void OnRefresh()
@@ -34,6 +39,15 @@ public class UIPopupGameOver : UIPopup
     public void SetResult(int result)
     {
         _resultText.text = result == 1 ? "YOU WIN ! !" : result == 0 ? "YOU LOSE.." : "IT'S DRAW";
+
+        _backgroundImg.DOKill();
+        _backgroundImg.color = _backgroundImg.color.SetAlpha(0f);
+        _backgroundImg.DOFade(0.95f, 0.5f).SetEase(Ease.InQuad).SetUpdate(true);
+
+
+        contentTF.transform.DOKill();
+        contentTF.transform.localPosition = new Vector3(0f, 2000f, 0f);
+        contentTF.transform.DOLocalMoveY(0f, 2f).SetEase(Ease.OutBounce).SetUpdate(true);
     }
 
     private void OnRetryButtonClicked()

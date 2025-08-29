@@ -27,7 +27,9 @@ public class StringKey
     private static Dictionary<EEffectType, string> EffectNameDict = new Dictionary<EEffectType, string>()
     {
         {EEffectType.Explosion, "ExplosionEffect"},
-        {EEffectType.ShieldHit, "ShieldHit"},
+        {EEffectType.ShieldHit, "ShieldEffect"},
+        {EEffectType.Hit, "HitEffect"},
+        {EEffectType.AirBrake, "AirBrakeEffect"},
     };
 
     public static string GetSceneName(ESceneType type) => SceneNameDict[type];

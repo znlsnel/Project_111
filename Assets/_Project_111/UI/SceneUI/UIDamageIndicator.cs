@@ -25,9 +25,15 @@ public class UIDamageIndicator : UIBase
 
     public void ShowIndicator()
     {
-        _damageImg.DOColor(_defaultColor, 0.3f).SetEase(Ease.OutQuad).OnComplete(() =>
+        _damageImg.DOKill();
+        _damageImg.DOColor(_defaultColor, 0.3f)
+            .SetEase(Ease.OutQuad)
+            .SetUpdate(true)
+            .OnComplete(() =>
         {
-            _damageImg.DOColor(_clearColor, 0.3f).SetEase(Ease.InQuad);
+            _damageImg.DOColor(_clearColor, 0.3f)
+                .SetEase(Ease.InQuad)
+                .SetUpdate(true);
         });
     }
 }

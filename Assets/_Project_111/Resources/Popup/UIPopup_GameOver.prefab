@@ -497,6 +497,7 @@ MonoBehaviour:
   _autoCloseTime: 0
   _openSoundName: 
   _closeSoundName: 
+  _backgroundImg: {fileID: 2090717658324705852}
   _resultText: {fileID: 4554181647061871641}
   _retryButton: {fileID: 1238993804629781995}
 --- !u!1 &5146299343317962243

@@ -38,6 +38,7 @@ public class SkillShield : SkillBase
             if (pc.Owner == Owner)
                 return;
 
+            Managers.Object.CreateEffect(EEffectType.ShieldHit, pc.transform.position, 2f);
             pc.Despawn();
         }
     }

@@ -50,9 +50,9 @@ public class ObjectManager : BaseObjectManager<ObjectManager>
         return go;
     }
 
-    public GameObject CreateEffect(EEffectType type, CreatureController owner, float size = 1f, float duration = 2f)
+    public GameObject CreateEffect(EEffectType type, Transform transform, float size = 1f, float duration = 2f)
     {
-        var go = CreateEffect(StringKey.GetEffectName(type), owner.transform, size);
+        var go = CreateEffect(StringKey.GetEffectName(type), transform, size);
         Despawn(go, duration);
         return go;
     }

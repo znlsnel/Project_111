@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9e5eafcca75486ba1c832ab3735c7b, type: 3}
   m_Name: ArrowSO
   m_EditorClassIdentifier: 
-  Speed: 5
-  Damage: 3
+  Speed: 7
+  Damage: 200
   KnockbackPower: 1
   KnockbackTime: 1
   ArcHeight: 5

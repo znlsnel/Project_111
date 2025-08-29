@@ -10,6 +10,7 @@ public class SkillAirBrake : SkillBase
     {
 
     }
+    
     protected override void OnShot()
     {
         List<ProjectileController> projectiles = Managers.Object.GetProjectiles(Owner.Target);
@@ -17,6 +18,8 @@ public class SkillAirBrake : SkillBase
         {
             pc.OnSlow(_slowPercent, _slowDuration);
         }
+
+        Managers.Object.CreateEffect(EEffectType.AirBrake, Owner.transform, 10f);
     }
 
 }

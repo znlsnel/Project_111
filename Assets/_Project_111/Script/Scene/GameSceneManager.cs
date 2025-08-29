@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SongLib;
 using System;
+using DG.Tweening;
 
 public class GameSceneManager : BaseSceneManager<GameSceneManager>
 {
@@ -14,6 +15,7 @@ public class GameSceneManager : BaseSceneManager<GameSceneManager>
 
     private int _gameTime = 60;
     private GameTimer _gameTimer;
+    private bool _isGameOver = false;
 
     public Rect EnemyMoveArea => _enemyMoveArea;
 
@@ -38,6 +40,7 @@ public class GameSceneManager : BaseSceneManager<GameSceneManager>
     public void StartGame()
     {
         _uiSceneGame.SetActive(true);
+        _isGameOver = false;
 
         SetObject();
         _uiSceneGame.Init();
@@ -70,7 +73,19 @@ public class GameSceneManager : BaseSceneManager<GameSceneManager>
 
     private void OnGameOver()
     {
-        Time.timeScale = 0f;
+        if (_isGameOver)
+            return;
+
+        _isGameOver = true;
+
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0f, 2f)
+            .SetEase(Ease.OutQuad)
+            .SetUpdate(true)
+            .OnComplete(() =>
+            {
+                Time.timeScale = 0f;
+            });
+
         bool isPlayerDead = Managers.Object.Player.Stat.CurrentHealth <= 0;
         bool isEnemyDead = Managers.Object.Enemy.Stat.CurrentHealth <= 0;
 

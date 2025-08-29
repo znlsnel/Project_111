@@ -16,4 +16,4 @@ MonoBehaviour:
   Damage: 50
   KnockbackPower: 1
   KnockbackTime: 1
-  ArcHeight: 10
+  ArcHeight: 6
