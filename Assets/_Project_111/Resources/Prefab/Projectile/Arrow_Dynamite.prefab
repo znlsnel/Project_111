@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1943263245274054561}
   - component: {fileID: 3537046932269841198}
-  - component: {fileID: 6546569275516738348}
+  - component: {fileID: 8238976252048034344}
   m_Layer: 0
   m_Name: Arrow_Dynamite
   m_TagString: Untagged
@@ -68,8 +68,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.28
---- !u!114 &6546569275516738348
+  m_Radius: 2
+--- !u!114 &8238976252048034344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,12 +78,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5645858525928195185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3296afd98c6a949f09fc42958484eab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 85ad326a7235440778c4f5e9a3533e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 3537046932269841198}
-  _projectileData: {fileID: 11400000, guid: ab32b5f63fcfb47efa83917de3eedb96, type: 2}
+  projectileData: {fileID: 11400000, guid: ab32b5f63fcfb47efa83917de3eedb96, type: 2}
   _canRotate: 0
+  hitEffectType: 0
+  hitEffectSize: 3
 --- !u!1 &5670985829496656175
 GameObject:
   m_ObjectHideFlags: 0

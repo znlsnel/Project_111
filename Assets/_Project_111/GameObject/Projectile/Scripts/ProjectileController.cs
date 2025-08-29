@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using SongLib;
 using UnityEngine;
 using System;
+using Unity.IO.LowLevel.Unsafe;
 
 public class ProjectileController : MonoBehaviour
 {
 #region << =============== FIELD =============== >>
     [SerializeField] private Collider2D _collider;
-    [SerializeField] private ProjectileDataSO _projectileData;
+    [SerializeField] protected ProjectileDataSO projectileData;
     [SerializeField] private bool _canRotate = true;
+    [SerializeField] protected EEffectType hitEffectType = EEffectType.Hit;
+    [SerializeField] protected float hitEffectSize = 1f;
 
 
     private CreatureController _owner;
@@ -29,7 +32,7 @@ public class ProjectileController : MonoBehaviour
 #endregion
 
 #region << =============== SETUP =============== >>
-    public void Setup(CreatureController owner)
+    public virtual void Setup(CreatureController owner)
     {
         _owner = owner;
         _collider.enabled = true;
@@ -65,12 +68,12 @@ public class ProjectileController : MonoBehaviour
     }
     #endregion
     #region << =============== HIT =============== >>
-    private void HitGround()
+    protected virtual void HitGround()
     {
         Despawn(1f);
     }
 
-    private void HitTarget(CreatureController target)
+    protected virtual void HitTarget(CreatureController target)
     {
         if (target == null)
         {
@@ -78,10 +81,12 @@ public class ProjectileController : MonoBehaviour
             return;
         }
 
-        Managers.Object.CreateEffect(EEffectType.Explosion, target.transform.position, 1f);
-        target.TakeDamage(_projectileData.Damage, DamageType.Normal);
+        Managers.Object.CreateEffect(hitEffectType, target.transform.position, hitEffectSize);
+        target.TakeDamage(projectileData.Damage, DamageType.Normal);
         Despawn();
     }
+
+
     #endregion
     #region << =============== SLOW =============== >>
     public void OnSlow(float slowPercent, float duration)
@@ -107,7 +112,7 @@ public class ProjectileController : MonoBehaviour
             yield break;
         }
 
-        float speed = _projectileData.Speed;
+        float speed = projectileData.Speed;
         float totalTime = distanceToTarget / speed;
         float elapsedTime = 0f;
 
@@ -120,13 +125,13 @@ public class ProjectileController : MonoBehaviour
             Vector3 currentPos = Vector3.Lerp(startPosition, targetPosition, t);
 
             // 포물선의 높이 계산 (아치 형태)
-            float height = _projectileData.ArcHeight * Mathf.Sin(Mathf.PI * t);
+            float height = projectileData.ArcHeight * Mathf.Sin(Mathf.PI * t);
             currentPos.y += height;
 
             // 화살표가 이동 방향을 바라보도록 회전
             float lookaheadT = Mathf.Clamp01(t + (deltaTime / totalTime));
             Vector3 nextPos = Vector3.Lerp(startPosition, targetPosition, lookaheadT);
-            nextPos.y += _projectileData.ArcHeight * Mathf.Sin(Mathf.PI * lookaheadT);
+            nextPos.y += projectileData.ArcHeight * Mathf.Sin(Mathf.PI * lookaheadT);
             Vector3 direction = (nextPos - currentPos).normalized;
 
             if (direction != Vector3.zero && _canRotate)

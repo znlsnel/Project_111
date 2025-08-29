@@ -134,4 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 3537046932269841198}
-  _projectileData: {fileID: 11400000, guid: 2998b7ace46c74f7199292d5e54c3276, type: 2}
+  projectileData: {fileID: 11400000, guid: 2998b7ace46c74f7199292d5e54c3276, type: 2}
+  _canRotate: 1
+  hitEffectType: 1
+  hitEffectSize: 1
